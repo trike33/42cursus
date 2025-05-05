@@ -6,9 +6,12 @@
 /*   By: jfontbon <jfontbon@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 12:05:41 by jfontbon          #+#    #+#             */
-/*   Updated: 2025/05/05 08:38:51 by jfontbon         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:17:55 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
+
 void	ft_is_negative(int n)
 {
 	if (n < 0)

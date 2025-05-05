@@ -6,9 +6,11 @@
 /*   By: jfontbon <jfontbon@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 08:36:53 by jfontbon          #+#    #+#             */
-/*   Updated: 2025/05/05 08:37:14 by jfontbon         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:17:46 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {

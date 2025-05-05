@@ -6,11 +6,11 @@
 /*   By: jfontbon <jfontbon@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 12:28:15 by jfontbon          #+#    #+#             */
-/*   Updated: 2025/04/01 16:58:38 by jfontbon         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:19:53 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
 int	main(int argc, char *argv[])
 {
@@ -23,10 +23,10 @@ int	main(int argc, char *argv[])
 		ptr = argv[i];
 		while (*ptr != '\0')
 		{
-			write(1, ptr, 1);
+			ft_putchar(ptr);
 			ptr++;
 		}
-		write(1, "\n", 1);
+		ft_putchar('\n');
 		i++;
 	}
 	return (0);
