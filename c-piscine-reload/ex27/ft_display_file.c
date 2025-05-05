@@ -6,7 +6,7 @@
 /*   By: jfontbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:22:10 by jfontbon          #+#    #+#             */
-/*   Updated: 2025/05/05 12:22:14 by jfontbon         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:28:07 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	print_file(char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_putstr(2, "Cannot read file\n");
+		ft_putstr(2, "Cannot read file.\n");
 		return (1);
 	}
 	bytes = read(fd, buffer, BUF_SIZE);
