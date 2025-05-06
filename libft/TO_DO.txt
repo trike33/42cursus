@@ -1,9 +1,3 @@
-ft_memset: Fill a block of memory with a specific value.
-
-ft_bzero: Set a block of memory to zero (same as memset with zero value).
-
-ft_memcpy: Copy a block of memory from one location to another.
-
 ft_memmove: Move a block of memory, ensuring no overlap.
 
 ft_strchr: Find the first occurrence of a character in a string.

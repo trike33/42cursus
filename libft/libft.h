@@ -6,7 +6,7 @@
 /*   By: jfontbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 13:06:23 by jfontbon          #+#    #+#             */
-/*   Updated: 2025/05/05 13:09:34 by jfontbon         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:58:34 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t size);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
