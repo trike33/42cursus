@@ -1,9 +1,5 @@
 ft_memmove: Move a block of memory, ensuring no overlap.
 
-ft_strchr: Find the first occurrence of a character in a string.
-
-ft_strrchr: Find the last occurrence of a character in a string.
-
 ft_memchr: Find the first occurrence of a byte in a block of memory.
 
 ft_memcmp: Compare two blocks of memory.
