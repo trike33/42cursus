@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfontbon <jfontbon@student.42barcelona.co  +#+  +:+       +#+        */
+/*   By: jfontbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 15:50:53 by jfontbon          #+#    #+#             */
-/*   Updated: 2025/05/06 15:51:40 by jfontbon         ###   ########.fr       */
+/*   Created: 2025/05/09 11:01:47 by jfontbon          #+#    #+#             */
+/*   Updated: 2025/05/09 11:04:40 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
+	const unsigned char	*ptr;
+	unsigned char		uc;
 	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
+	ptr = (const unsigned char *)s;
+	uc = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
-		d[i] = s[i];
+		if (ptr[i] == uc)
+			return ((void *)&ptr[i]);
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }

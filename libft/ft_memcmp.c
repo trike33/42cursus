@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfontbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 12:39:03 by jfontbon          #+#    #+#             */
-/*   Updated: 2025/05/05 12:56:05 by jfontbon         ###   ########.fr       */
+/*   Created: 2025/05/09 11:06:35 by jfontbon          #+#    #+#             */
+/*   Updated: 2025/05/09 11:11:49 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	const unsigned char	*ptr1;
+	const unsigned char	*ptr2;
 
-	i = 0;
-	j = 0;
-	if (size > 0)
+	ptr1 = (const unsigned char *)s1;
+	ptr2 = (const unsigned char *)s2;
+	while (n > 0)
 	{
-		while (src[i] && i < size - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		if (*ptr1 != *ptr2)
+			return (*ptr1 - *ptr2);
+		ptr1++;
+		ptr2++;
+		n--;
 	}
-	while (src[j] != '\0')
-		j++;
-	j++;
-	return (j);
+	return (0);
 }

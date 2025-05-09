@@ -1,7 +1,0 @@
-ft_memmove: Move a block of memory, ensuring no overlap.
-
-ft_memchr: Find the first occurrence of a byte in a block of memory.
-
-ft_memcmp: Compare two blocks of memory.
-
-ft_strnstr: Find the first occurrence of a substring within a string, up to a specified number of characters.

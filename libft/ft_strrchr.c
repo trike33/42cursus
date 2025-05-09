@@ -9,7 +9,7 @@
 /*   Updated: 2025/05/07 20:09:25 by jfontbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
