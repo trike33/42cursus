@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
 // Test function for ft_isalpha
@@ -106,19 +108,142 @@ void test_atoi(void)
     printf("\"+99abc\" -> %d (Expected: 99) -> %s\n", ft_atoi("+99abc"), ft_atoi("+99abc") == 99 ? "PASS" : "FAIL");
 }
 
+void	test_bzero(void)
+{
+	char buffer[5] = "abcd";
+	ft_bzero(buffer, 2);
+	printf("\n--- ft_bzero ---\n");
+	printf("First 2 bytes zero? -> %s\n", buffer[0] == 0 && buffer[1] == 0 ? "PASS" : "FAIL");
+}
+
+void	test_strchr(void)
+{
+	printf("\n--- ft_strchr ---\n");
+	const char *s = "42 Network";
+	printf("Find 'N' in \"%s\" -> %s\n", s, ft_strchr(s, 'N') ? "PASS" : "FAIL");
+}
+
+void	test_strrchr(void)
+{
+	printf("\n--- ft_strrchr ---\n");
+	const char *s = "banana";
+	printf("Last 'a' in \"%s\" -> %s\n", s, ft_strrchr(s, 'a') ? "PASS" : "FAIL");
+}
+
+void	test_memmove(void)
+{
+	printf("\n--- ft_memmove ---\n");
+	char str[] = "abcdef";
+	ft_memmove(str + 2, str, 4);
+	printf("After memmove: %s -> %s\n", str, strcmp(str, "ababcd") == 0 ? "PASS" : "FAIL");
+}
+
+void	test_memcpy(void)
+{
+	printf("\n--- ft_memcpy ---\n");
+	char dest[6] = "";
+	const char *src = "Hello";
+	ft_memcpy(dest, src, 6);
+	printf("Copied \"%s\" -> \"%s\" -> %s\n", src, dest, strcmp(dest, src) == 0 ? "PASS" : "FAIL");
+}
+
+void	test_memchr(void)
+{
+	printf("\n--- ft_memchr ---\n");
+	char s[] = "abcde";
+	void *res = ft_memchr(s, 'c', 5);
+	printf("Find 'c' in \"%s\" -> %s\n", s, res != NULL ? "PASS" : "FAIL");
+}
+
+void	test_memcmp(void)
+{
+	printf("\n--- ft_memcmp ---\n");
+	printf("\"abc\" vs \"abc\" -> %s\n", ft_memcmp("abc", "abc", 3) == 0 ? "PASS" : "FAIL");
+	printf("\"abc\" vs \"abd\" -> %s\n", ft_memcmp("abc", "abd", 3) < 0 ? "PASS" : "FAIL");
+}
+
+void	test_strnstr(void)
+{
+	printf("\n--- ft_strnstr ---\n");
+	const char *hay = "Hello World";
+	const char *needle = "World";
+	char *res = ft_strnstr(hay, needle, 11);
+	printf("Find \"%s\" in \"%s\" -> %s\n", needle, hay, res ? "PASS" : "FAIL");
+}
+
+void	test_memset(void)
+{
+	printf("\n--- ft_memset ---\n");
+	char buffer[5] = "abcd";
+	ft_memset(buffer, 'x', 3);
+	printf("After memset: %s -> %s\n", buffer, strncmp(buffer, "xxxd", 4) == 0 ? "PASS" : "FAIL");
+}
+
+void	test_calloc(void)
+{
+	printf("\n--- ft_calloc ---\n");
+	int	*arr = (int *)ft_calloc(5, sizeof(int));
+	int	pass = 1;
+	size_t	i = 0;
+
+	if (!arr)
+	{
+		printf("Memory allocation failed -> FAIL\n");
+		return ;
+	}
+	while (i < 5)
+	{
+		if (arr[i] != 0)
+		{
+			pass = 0;
+			break ;
+		}
+		i++;
+	}
+	printf("Zero initialized? -> %s\n", pass ? "PASS" : "FAIL");
+	free(arr);
+}
+
+void	test_strdup(void)
+{
+	printf("\n--- ft_strdup ---\n");
+	const char	*src = "Hello 42";
+	char		*copy = ft_strdup(src);
+
+	if (!copy)
+	{
+		printf("Memory allocation failed -> FAIL\n");
+		return ;
+	}
+	printf("Original: \"%s\", Copy: \"%s\" -> %s\n",
+		src, copy, strcmp(src, copy) == 0 ? "PASS" : "FAIL");
+	free(copy);
+}
+
 int main(void)
 {
-    test_isalpha();
-    test_isdigit();
-    test_isalnum();
-    test_isascii();
-    test_isprint();
-    test_toupper();
-    test_tolower();
-    test_strlen();
-    test_strlcpy();
-    test_strlcat();
-    test_strncmp();
-    test_atoi();
-    return 0;
+	test_isalpha();
+	test_isdigit();
+	test_isalnum();
+	test_isascii();
+	test_isprint();
+	test_toupper();
+	test_tolower();
+	test_strlen();
+	test_strlcpy();
+	test_strlcat();
+	test_strncmp();
+	test_atoi();
+	test_calloc();
+	test_strdup();
+	test_bzero();
+	test_strchr();
+	test_strrchr();
+	test_memmove();
+	test_memcpy();
+	test_memchr();
+	test_memcmp();
+	test_strnstr();
+	test_memset();
+	return (0);
 }
