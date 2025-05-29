@@ -220,6 +220,43 @@ void	test_strdup(void)
 	free(copy);
 }
 
+void	test_substr_join_trim()
+{
+    char *s1 = "  ---hola mundo---  ";
+    char *s2 = "Lib";
+    char *s3 = "ft";
+    char *sub;
+    char *join;
+    char *trim;
+
+    // Test ft_substr
+    printf("--- ft_substr ---\n");
+    sub = ft_substr("Hello World", 6, 5);
+    if (sub && strcmp(sub, "World") == 0)
+        printf("ft_substr: PASS ('%s')\n", sub);
+    else
+        printf("ft_substr: FAIL (got '%s', expected 'World')\n", sub ? sub : "NULL");
+    free(sub);
+
+    // Test ft_strjoin
+    printf("--- ft_strjoin ---\n");
+    join = ft_strjoin(s2, s3);
+    if (join && strcmp(join, "Libft") == 0)
+        printf("ft_strjoin: PASS ('%s')\n", join);
+    else
+        printf("ft_strjoin: FAIL (got '%s', expected 'Libft')\n", join ? join : "NULL");
+    free(join);
+
+    // Test ft_strtrim
+    printf("--- ft_strtrim ---\n");
+    trim = ft_strtrim(s1, " -");
+    if (trim && strcmp(trim, "hola mundo") == 0)
+        printf("ft_strtrim: PASS ('%s')\n", trim);
+    else
+        printf("ft_strtrim: FAIL (got '%s', expected 'hola mundo')\n", trim ? trim : "NULL");
+    free(trim);
+}
+
 int main(void)
 {
 	test_isalpha();
@@ -245,5 +282,6 @@ int main(void)
 	test_memcmp();
 	test_strnstr();
 	test_memset();
+	test_substr_join_trim();
 	return (0);
 }
